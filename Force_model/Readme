@@ -1,0 +1,11 @@
+Before start the program, default settings for arduino is '/dev/ttyACM0' load with the package force.ino with 50 mills delay.
+
+The python packages need
+roslaunch cyton_veta.launch.usb0 (default port)
+
+After make sure the serial and ros setup, feel free to go this with joystick
+To obtain the certain pressure data: press select
+To store them, type in a name for the file. You will find a txt on the /home Folder
+
+**Local Use only** Not binded with Ethernet function
+

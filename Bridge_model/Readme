@@ -1,0 +1,5 @@
+Before test this function, please make sure the port of all device is clear:
+$ ls /dev/tty* see all port namely tty
+To find the exact device, Open Arduino see the port name
+Change the pressure_storage's location below the code: '/dev/tty*' if you have different location
+
