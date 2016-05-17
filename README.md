@@ -8,3 +8,4 @@ The Robot with sensors’ feedback was becoming more significant in manufacturin
 - Rosbuild CYTON VETA Pacakge
 - SimpleGUI replacement module required: Pygame, Matplotlib
 - Additional module needed: Numpy, Pyserial
+- Run Ros_start first to enable a node
