@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /home/anrg/catkin_ws/src/cyton/cyton_arm_controller/launch
+roslaunch cyton_veta.launch
