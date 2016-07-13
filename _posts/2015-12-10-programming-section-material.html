@@ -1,0 +1,12 @@
+---
+layout: post
+title: Programming section material
+date: '2015-12-10T04:11:00.003-08:00'
+author: King Lan
+tags: 
+modified_time: '2015-12-10T04:11:48.477-08:00'
+blogger_id: tag:blogger.com,1999:blog-3689011111251379014.post-7335567891338636874
+blogger_orig_url: http://lanking-cyton.blogspot.com/2015/12/programming-section-material.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">Preparing for the presentation, now is the time to show off my detailed work.&nbsp; <br />The topics for the Robot arm are as follows:<br /><br /><ul><li>/shoulder_roll_controller/command</li><li>/shoulder_roll_controller/state</li><li>/shoulder_pitch_controller/command</li><li>/shoulder_pitch_controller/state</li><li>/elbow_roll_controller/command</li><li>/elbow_roll_controller/state</li><li>/elbow_pitch_controller/command</li><li>/elbow_pitch_controller/state</li><li>/wrist_roll_controller/command</li><li>/wrist_roll_controller/state</li><li>/wrist_pitch_controller/command</li><li>/wrist_pitch_controller/state</li><li>/wrist_yaw_controller/command</li><li>/wrist_yaw_controller/state</li><li>/gripper_open_controller/command</li><li>/gripper_open_controller/state</li><li>/motor_states/cyton_arm</li></ul>These section were well Listened/Published by the ROS server. A python program were based on this to publish command from the keyboard.&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; pubs = [rospy.Publisher(name + '/command', Float64) for name in joint_names]<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; rospy.init_node('cyton_veta', anonymous=True)<br />&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for i in range(len(pubs)):<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; pubs[i].publish(joint_commands[i])<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; print joint_current<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; pass<br /><br />These will work together with ROS. <br /><br /></div>

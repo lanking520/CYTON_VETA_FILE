@@ -1,0 +1,12 @@
+---
+layout: post
+title: Week 3 Debugging
+date: '2016-02-15T08:20:00.001-08:00'
+author: King Lan
+tags: 
+modified_time: '2016-02-15T09:01:28.726-08:00'
+blogger_id: tag:blogger.com,1999:blog-3689011111251379014.post-436962413331148716
+blogger_orig_url: http://lanking-cyton.blogspot.com/2016/02/week-3-debugging.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">&nbsp; When you are using PySerial, it may cause a delay in the system (mine was 10 second), especially you are sending packages continuously. Use the following four steps to avoid this issue: 1. Send the package only when the value has changed. 2. Set a time_out for your program 3. Set a delay in your loop of Arduino, Raspberry Pi... 4. Setting try and except format to the data to avoid any error and do a ser.flush() to clean up any bad data.<br /><br />&nbsp; Final test applied on the Arduino Yun, FTDI old driver was the problem and may cause the ROS crash. Another thing is the USB/IP technology may just be useful in receiving the serial data, controlling mouse, or keyboard.....but not the heavy job (Burn a sketch to Arduino).<br /><br />&nbsp; Overall Progress: Pressure_sensing Library finished, typically used for the storage of pressure and gripper data for analysis.<br /><br />&nbsp; This week: Building up the platform of the JAR.<br />&nbsp; optional: Apply Machine Learning Linear Regression model to the MPU-6050 GyroScope:<br />&nbsp; angle_X = theta1*angle_X&nbsp;+ theta2*angle_Y&nbsp;+ theta3 * angle_Z&nbsp;+ theta4*acc ...<br />&nbsp; Still in the Scratch Stage. Will think more by the end of this week.<br /><br /><br /></div>

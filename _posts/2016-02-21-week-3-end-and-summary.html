@@ -1,0 +1,13 @@
+---
+layout: post
+title: Week 3 End and the summary
+date: '2016-02-20T10:21:00.001-08:00'
+author: King Lan
+tags: 
+modified_time: '2016-02-20T10:21:28.923-08:00'
+thumbnail: https://1.bp.blogspot.com/-nL51qUZC91A/Vsium1tNH6I/AAAAAAAAATU/UROwlsi7PGo/s72-c/Capture.JPG
+blogger_id: tag:blogger.com,1999:blog-3689011111251379014.post-2571453132390850196
+blogger_orig_url: http://lanking-cyton.blogspot.com/2016/02/week-3-end-and-summary.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">To build up the final target, there is some problem I should now figure:<br /><br />Underdamped -- vibration on the haptic-gripper. Using velocity rather than direct positions. The feedback of the system should be well evaluated. The unstable system may sometimes dead.<br /><br />System break down if there are so much threads, how would I develop the system to make them works better:<br />1. Thread for major movement<br />2. Thread for Loading/Passing Pressure<br />3. Thread for GUI<br /><br />The Arduino Board, as we all know, this guy is a single thread system, where we cannot do multiple task on this. The haptic device consist of a Receiving Module (for the servo) and move the servo, in the time that moving the servo (around 300ms), the transmission on the next block will be delayed which is the pressure sensor data. It would increase the error of the control system.<br /><br />Considering the hardware problem, a possible solution is putting the pressure vs displacement formula on all of the devices, where the haptic device just need to response to the pressure change. A kind of offline method, will be discussed in details in report.<br /><br />Easter Egg: 3D emulation class in Python:<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-nL51qUZC91A/Vsium1tNH6I/AAAAAAAAATU/UROwlsi7PGo/s1600/Capture.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-nL51qUZC91A/Vsium1tNH6I/AAAAAAAAATU/UROwlsi7PGo/s1600/Capture.JPG" /></a></div>http://www.codeskulptor.org/#user41_zHDygKBwnW_9.py<br /><br /><br /><br /></div>

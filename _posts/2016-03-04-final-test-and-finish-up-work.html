@@ -1,0 +1,13 @@
+---
+layout: post
+title: Final Test and finish up the work
+date: '2016-03-03T08:43:00.003-08:00'
+author: King Lan
+tags: 
+modified_time: '2016-03-03T11:10:35.276-08:00'
+thumbnail: https://2.bp.blogspot.com/-hCHsWp3ZYPk/Vthndhx2fbI/AAAAAAAAAVY/_owgRcxBEs8/s72-c/Screenshots.png
+blogger_id: tag:blogger.com,1999:blog-3689011111251379014.post-9091018199289066345
+blogger_orig_url: http://lanking-cyton.blogspot.com/2016/03/final-test-and-finish-up-work.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on"><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-hCHsWp3ZYPk/Vthndhx2fbI/AAAAAAAAAVY/_owgRcxBEs8/s1600/Screenshots.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="226" src="https://2.bp.blogspot.com/-hCHsWp3ZYPk/Vthndhx2fbI/AAAAAAAAAVY/_owgRcxBEs8/s320/Screenshots.png" width="320" /></a></div>Today, the remaining problem are solved. After serious adjustment on the servo, the speed could change from 0 to 255. During the debug process, I have found the 'trap data' problem: sometimes the serial data transmission is not stable (Always unstable), the computer will receive a wrong data, such as read 0.15 0.15 as 150.1 or 389 (should be 0.389), one possible solution is adding limit for data (such as only keep the data from 0.15 to 10). However, the best way to do that is the median filter, we will sacrifice some of the data and keep the most reliable data. I will try to add this filter to my program, known as the dominator for the high variance data. The same problem happened to the haptic device side, they may receive some incredible data. In this case, I could only do the limit but not the median filter (Hardware issue). Strongly restricted by the hardware (The Servo torque is not enough), I could only do a small pressure in this case. Will find a better solution. Tomorrow will do another test and JAR emulation. Ready for video recording.<br /><br />[Update] Due to the Machine Learning Course's Deadline,I will leave the remaining problems aside. Today just got some learning on Denavit-Hartenberg Convention, hope in future this might help me to finish the forward Kinetics.</div>
