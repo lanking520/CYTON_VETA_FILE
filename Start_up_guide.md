@@ -36,12 +36,30 @@ Find more information [Here](https://www.tutorialspoint.com/python/python_multit
 
 Multithread is very useful when you want a program to run simutainiously without stopping. In this part, you will use thread Class. Create a file name "my_first_thread.py" on desktop and then run it (same as you run "my_first_cyton.py")
 ```python
-import thread
+import threading
 import time
-counter = 0
-def demo():
-	print "my thread runs " + str(counter) +" times"
-	time.sleep(2)
-thread.start_new_thread(demo)
+
+counter1 = 0
+counter2 = 0
+
+def th1():
+    global counter1
+    while counter1 < 20:
+        print "Thread 2 runs " + str(counter1) +" times\n"
+        counter1 += 1
+        time.sleep(1)
+
+def th2():
+    global counter2
+    while counter2 < 10:
+        print "Thread 1 runs " + str(counter2) +" times\n"
+        counter2 += 1
+        time.sleep(2)
+
+t1=threading.Thread(target = th1)
+t2=threading.Thread(target = th2)
+
+t1.start()
+t2.start()
 ```
 
