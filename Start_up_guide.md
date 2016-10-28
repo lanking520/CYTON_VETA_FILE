@@ -33,7 +33,12 @@ Run this code will reset CYTON VETA to home position as straight up
 This introduction will give you more views in the threading procedure
 
 Find more information [Here](https://www.tutorialspoint.com/python/python_multithreading.htm)
-
+### First Aid
+If you happend to find that the system cannot find "threading" package
+do the following:
+```
+pip install threading
+```
 Multithread is very useful when you want a program to run simutainiously without stopping. In this part, you will use thread Class. Create a file name "my_first_thread.py" on desktop and then run it (same as you run "my_first_cyton.py")
 ```python
 import threading
@@ -62,13 +67,19 @@ t2=threading.Thread(target = th2)
 t1.start()
 t2.start()
 ```
-To call a thread you need the following
+To call a thread you need the following, this is the minimal version of using thread. You need to maintain the code in my_running thread to create your own runnable thread.
+
+For more information of this 
 ```python
 import threading  # thread class
 import time	  # Time module
 
 def my_running_thread():
 	# main code here
+	# pig_can_fly = true
+	# while pig_can_fly:
+	# 	print("Lanking is smart")
+	time.sleep(1)
 	pass
 thread1=threading.Thread(target = my_running_thread) # Create a new thread
 thread1.start() # Start the thread operation
