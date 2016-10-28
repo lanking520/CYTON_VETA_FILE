@@ -9,6 +9,8 @@ roslib.load_manifest('cyton_arm_controller')
 from std_msgs.msg import Float64
 import rospy #ROS library for python
 
+rospy.init_node('cyton_veta', anonymous=True)
+
 def move(position):
         #core function in moving arm
         joint_commands = tuple(position)
@@ -16,7 +18,6 @@ def move(position):
         		'elbow_pitch_controller', 'wrist_roll_controller', 'wrist_pitch_controller',
         		'wrist_yaw_controller', 'gripper_open_controller')
         pubs = [rospy.Publisher(name + '/command', Float64) for name in joint_names]
-	      rospy.init_node('cyton_veta', anonymous=True)
         for i in range(len(pubs)):
             pubs[i].publish(joint_commands[i])
 
@@ -129,6 +130,7 @@ import threading
 pygame.init()
 joy = pygame.joystick.Joystick(0)
 joy.init()
+rospy.init_node('cyton_veta', anonymous=True)
 
 # Global Variable
 my_position = [0,0,0,0,0,0,0,0]
@@ -141,7 +143,6 @@ def move(position):
         		'elbow_pitch_controller', 'wrist_roll_controller', 'wrist_pitch_controller',
         		'wrist_yaw_controller', 'gripper_open_controller')
         pubs = [rospy.Publisher(name + '/command', Float64) for name in joint_names]
-	rospy.init_node('cyton_veta', anonymous=True)
         for i in range(len(pubs)):
             pubs[i].publish(joint_commands[i])
 	    
