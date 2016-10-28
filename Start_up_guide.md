@@ -85,7 +85,7 @@ thread1.start() # Start the thread operation
 ```
 ## Gamepad module added
 This is the minimum workable version of gamepad. To get it work properly, you need to press "Analog" on the gamepad.
-```
+```python
 import pygame
 import time
 
