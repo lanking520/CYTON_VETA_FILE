@@ -31,5 +31,17 @@ python my_first_cyton.py
 Run this code will reset CYTON VETA to home position as straight up
 ## Multiple threading Introduction
 This introduction will give you more views in the threading procedure
+
 Find more information [Here](https://www.tutorialspoint.com/python/python_multithreading.htm)
+
+Multithread is very useful when you want a program to run simutainiously without stopping. In this part, you will use thread Class
+```
+import thread
+import time
+counter = 0
+def demo():
+	print "my thread runs " + str(counter) +" times"
+	time.sleep(2)
+thread.start_new_thread(demo)
+```
 
