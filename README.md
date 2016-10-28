@@ -9,3 +9,24 @@ The Robot with sensors’ feedback was becoming more significant in manufacturin
 - SimpleGUI replacement module required: Pygame, Matplotlib
 - Additional module needed: Numpy, Pyserial
 - Run Ros_start first to enable a node
+
+## A startup guide for the user
+This guide will help you to create a basic Running code
+### Preparation
+1. Get Cyton Veta connect to battery and check the usb terminal
+2. Git clone this repository (Google how to do git clone) to the desktop
+3. This tutorial will assume you have this file on the desktop
+### Push ROS Node on the Computer
+Create a terminal
+```
+cd ~/Desktop
+cd CYTON_VETA_FILE/
+cd ROS_Start/
+roslaunch cyton_veta.launch.usb0
+```
+Alternatively, you can do
+```
+roslaunch ~/Desktop/CYTON_VETA_FILE/ROS_Start/CYTcyton_veta.launch.usb0
+```
+### Run the python file you have created
+
