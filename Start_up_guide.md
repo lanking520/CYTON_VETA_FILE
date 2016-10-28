@@ -120,6 +120,7 @@ from std_msgs.msg import Float64
 import rospy #ROS library for python
 import pygame
 import time
+import threading
 
 pygame.init()
 joy = pygame.joystick.Joystick(0)
@@ -127,6 +128,7 @@ joy.init()
 
 # Global Variable
 my_position = [0,0,0,0,0,0,0,0]
+my_gamepad_data = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 def move(position):
         #core function in moving arm
@@ -154,4 +156,28 @@ def joystick():
         it+=1
     return out
 
+# Todo:
+# 1. maintain the thread that can take out joystick data to global variable every 200ms.
+def send_joypad_update_to_global():
+	global my_gamepad_data
+	while True:
+        	# Your code Start here
+		print str(my_gamepad_data)
+        	time.sleep(0.2)
+
+# Todo:
+# 2. maintain the thread that can get the CYTON_VETA listen to the gamepad
+def cyton_veta_to_game_pad():
+	global my_gamepad_data, my_position
+	while True:
+		#Your code start here
+		# my_position[3] += 0.05 * my_gamepad_data[0] # this line will let elbow_roll_controller follow the gamepad
+		time.sleep(0.2)
+# Todo:
+# 3. can you tell me which one is the "Scale" in this function (how much I want the cyton move with game_pad data)
+
+my_thread1=threading.Thread(target = send_joypad_update_to_global)
+my_thread2=threading.Thread(target = cyton_veta_to_game_pad)
+my_thread1.start()
+my_thread2.start()
 ```
