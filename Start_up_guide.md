@@ -111,3 +111,47 @@ while True:
 	print str(joystick()) + "\n"
 	time.sleep(1)
 ```
+## Get them work together
+I have prepared a draft file for you, name it "My_First_Cyton_Controller.py" and put it on the desktop
+```python
+import roslib  #Basic library for ROS
+roslib.load_manifest('cyton_arm_controller')
+from std_msgs.msg import Float64
+import rospy #ROS library for python
+import pygame
+import time
+
+pygame.init()
+joy = pygame.joystick.Joystick(0)
+joy.init()
+
+# Global Variable
+my_position = [0,0,0,0,0,0,0,0]
+
+def move(position):
+        #core function in moving arm
+        joint_commands = tuple(position)
+	joint_names = ( 'shoulder_roll_controller', 'shoulder_pitch_controller', 'elbow_roll_controller',
+        		'elbow_pitch_controller', 'wrist_roll_controller', 'wrist_pitch_controller',
+        		'wrist_yaw_controller', 'gripper_open_controller')
+        pubs = [rospy.Publisher(name + '/command', Float64) for name in joint_names]
+	      rospy.init_node('cyton_veta', anonymous=True)
+        for i in range(len(pubs)):
+            pubs[i].publish(joint_commands[i])
+	    
+def joystick():
+    out = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    it = 0 #iterator
+    pygame.event.pump()
+    
+    #Read input from the two joysticks       
+    for i in range(0, joy.get_numaxes()):
+        out[it] = joy.get_axis(i)
+        it+=1
+    #Read input from buttons
+    for i in range(0, joy.get_numbuttons()):
+        out[it] = joy.get_button(i)
+        it+=1
+    return out
+
+```
