@@ -114,7 +114,7 @@ while True:
 ## Get them work together
 I have prepared a draft file for you, name it "My_First_Cyton_Controller.py" and put it on the desktop.
 
-REMEBER to fix the format problem!
+REMEBER to fix the format problem! It time takes more than 1 hour, find Valerio for help!
 
 After your implementation, run roslauch first. Then open another terminal to run this code.
 ```python
