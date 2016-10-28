@@ -2,7 +2,7 @@
 
 
 ## The runnable module CYTON Manager
-create a file name "my_first_cyton.py" in desktop and put the following code.
+create a file name "my_first_cyton.py" in desktop and put the following code. 
 ```python
 import roslib  #Basic library for ROS
 roslib.load_manifest('cyton_arm_controller')
@@ -112,7 +112,11 @@ while True:
 	time.sleep(1)
 ```
 ## Get them work together
-I have prepared a draft file for you, name it "My_First_Cyton_Controller.py" and put it on the desktop
+I have prepared a draft file for you, name it "My_First_Cyton_Controller.py" and put it on the desktop.
+
+REMEBER to fix the format problem!
+
+After your implementation, run roslauch first. Then open another terminal to run this code.
 ```python
 import roslib  #Basic library for ROS
 roslib.load_manifest('cyton_arm_controller')
