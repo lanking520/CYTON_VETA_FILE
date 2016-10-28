@@ -137,7 +137,7 @@ def move(position):
         		'elbow_pitch_controller', 'wrist_roll_controller', 'wrist_pitch_controller',
         		'wrist_yaw_controller', 'gripper_open_controller')
         pubs = [rospy.Publisher(name + '/command', Float64) for name in joint_names]
-	      rospy.init_node('cyton_veta', anonymous=True)
+	rospy.init_node('cyton_veta', anonymous=True)
         for i in range(len(pubs)):
             pubs[i].publish(joint_commands[i])
 	    
