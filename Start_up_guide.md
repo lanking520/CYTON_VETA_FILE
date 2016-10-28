@@ -69,7 +69,6 @@ t2.start()
 ```
 To call a thread you need the following, this is the minimal version of using thread. You need to maintain the code in my_running thread to create your own runnable thread.
 
-For more information of this 
 ```python
 import threading  # thread class
 import time	  # Time module
@@ -84,4 +83,31 @@ def my_running_thread():
 thread1=threading.Thread(target = my_running_thread) # Create a new thread
 thread1.start() # Start the thread operation
 ```
+## Gamepad module added
+This is the minimum workable version of gamepad. To get it work properly, you need to press "Analog" on the gamepad.
+```
+import pygame
+import time
 
+pygame.init()
+joy = pygame.joystick.Joystick(0)
+joy.init()
+
+def joystick():
+    out = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    it = 0 #iterator
+    pygame.event.pump()
+    
+    #Read input from the two joysticks       
+    for i in range(0, joy.get_numaxes()):
+        out[it] = joy.get_axis(i)
+        it+=1
+    #Read input from buttons
+    for i in range(0, joy.get_numbuttons()):
+        out[it] = joy.get_button(i)
+        it+=1
+    return out
+while True:
+	print str(joystick()) + "\n"
+	time.sleep(1)
+```
