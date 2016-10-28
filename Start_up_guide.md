@@ -4,7 +4,6 @@
 ## The runnable module CYTON Manager
 create a file name "my_first_cyton.py" in desktop and put the following code.
 ```python
-import pygame
 import roslib  #Basic library for ROS
 roslib.load_manifest('cyton_arm_controller')
 from std_msgs.msg import Float64
