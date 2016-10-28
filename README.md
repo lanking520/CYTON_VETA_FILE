@@ -15,6 +15,7 @@ This guide will help you to create a basic Running code
 ### Preparation
 1. Get Cyton Veta connect to battery and check the usb terminal
 2. Git clone this repository (Google how to do git clone) to the desktop
+2. Alternatively, you can download this repository as a zip and extract to the desktop
 3. This tutorial will assume you have this file on the desktop
 
 ### Push ROS Node on the Computer
