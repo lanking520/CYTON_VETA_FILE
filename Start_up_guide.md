@@ -29,7 +29,7 @@ cd ~/Desktop
 python my_first_cyton.py
 ```
 Run this code will reset CYTON VETA to home position as straight up
-## Multiple threading Introduction
+## Multi-threading Introduction
 This introduction will give you more views in the threading procedure
 
 Find more information [Here](https://www.tutorialspoint.com/python/python_multithreading.htm)
@@ -61,5 +61,16 @@ t2=threading.Thread(target = th2)
 
 t1.start()
 t2.start()
+```
+To call a thread you need the following
+```python
+import threading  # thread class
+import time	  # Time module
+
+def my_running_thread():
+	# main code here
+	pass
+thread1=threading.Thread(target = my_running_thread) # Create a new thread
+thread1.start() # Start the thread operation
 ```
 
