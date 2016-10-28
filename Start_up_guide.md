@@ -34,8 +34,8 @@ This introduction will give you more views in the threading procedure
 
 Find more information [Here](https://www.tutorialspoint.com/python/python_multithreading.htm)
 
-Multithread is very useful when you want a program to run simutainiously without stopping. In this part, you will use thread Class
-```
+Multithread is very useful when you want a program to run simutainiously without stopping. In this part, you will use thread Class. Create a file name "my_first_thread.py" on desktop and then run it (same as you run "my_first_cyton.py")
+```python
 import thread
 import time
 counter = 0
