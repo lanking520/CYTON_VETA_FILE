@@ -176,6 +176,7 @@ def cyton_veta_to_game_pad():
 	while True:
 		#Your code start here
 		# my_position[3] += 0.05 * my_gamepad_data[0] # this line will let elbow_roll_controller follow the gamepad
+		# move(my_position)
 		time.sleep(0.2)
 # Todo:
 # 3. can you tell me which one is the "Scale" in this function (how much I want the cyton move with game_pad data)
